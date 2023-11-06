@@ -12,8 +12,29 @@ class User {
   constructor(email, name) {
     this.email = email;
     this.name = name;
+    this._courseCount = 1;
     this.city = 'Toronto';
+  }
+  deleteToken() {
+    console.log('Token deleted');
+  }
+  get getAppleEmail() {
+    return `apple${this.email}`;
+  }
+  get couseCount() {
+    return this._courseCount;
+  }
+  set courseCount(couseNum) {
+    if (couseNum <= 1) {
+      throw new Error('Course count should be more than 1');
+    }
+    this._courseCount = couseNum;
+  }
+  get getDeleteToken() {
+    return this.deleteToken();
   }
 }
 const john = new User('john@example.com', 'John');
 console.log(john);
+console.log(john.getAppleEmail);
+console.log(john.getDeleteToken);

@@ -9,9 +9,35 @@
 // }
 
 class User {
+  private _courseCount = 1;
   readonly city: string = 'Toronto';
+
   constructor(public email: string, public name: string) {}
+  private deleteToken() {
+    console.log('Token deleted');
+  }
+
+  get getAppleEmail(): string {
+    return `apple${this.email}`;
+  }
+
+  get couseCount(): number {
+    return this._courseCount;
+  }
+
+  set courseCount(couseNum: number) {
+    if (couseNum <= 1) {
+      throw new Error('Course count should be more than 1');
+    }
+    this._courseCount = couseNum;
+  }
+
+  get getDeleteToken(): void {
+    return this.deleteToken();
+  }
 }
 
 const john = new User('john@example.com', 'John');
 console.log(john);
+console.log(john.getAppleEmail);
+console.log(john.getDeleteToken);
