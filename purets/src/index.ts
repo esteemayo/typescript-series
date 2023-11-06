@@ -9,7 +9,7 @@
 // }
 
 class User {
-  private _courseCount = 1;
+  protected _courseCount = 1;
   readonly city: string = 'Toronto';
 
   constructor(public email: string, public name: string) {}
@@ -37,7 +37,14 @@ class User {
   }
 }
 
+class SubUser extends User {
+  isFamily: boolean = true;
+  changeCourseCount() {
+    this._courseCount = 4;
+  }
+}
+
 const john = new User('john@example.com', 'John');
-console.log(john);
-console.log(john.getAppleEmail);
-console.log(john.getDeleteToken);
+// console.log(john);
+// console.log(john.getAppleEmail);
+// console.log(john.getDeleteToken);

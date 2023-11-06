@@ -34,7 +34,16 @@ class User {
     return this.deleteToken();
   }
 }
+class SubUser extends User {
+  constructor() {
+    super(...arguments);
+    this.isFamily = true;
+  }
+  changeCourseCount() {
+    this._courseCount = 4;
+  }
+}
 const john = new User('john@example.com', 'John');
-console.log(john);
-console.log(john.getAppleEmail);
-console.log(john.getDeleteToken);
+// console.log(john);
+// console.log(john.getAppleEmail);
+// console.log(john.getDeleteToken);
