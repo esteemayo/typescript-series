@@ -24,3 +24,20 @@ function printAll(strs: string | string[] | null) {
     }
   }
 }
+
+interface IUser {
+  name: string;
+  email: string;
+}
+
+interface IAdmin {
+  name: string;
+  email: string;
+  isAdmin: boolean;
+}
+
+function isAdminAccount(account: IUser | IAdmin) {
+  if ('isAdmin' in account) {
+    return account.isAdmin;
+  }
+}
