@@ -66,3 +66,28 @@ function getFood(pet: Fish | Bird) {
     return 'Bird Food';
   }
 }
+
+interface Circle {
+  kind: 'circle';
+  radius: number;
+}
+
+interface Square {
+  kind: 'square';
+  side: number;
+}
+
+interface Rectangle {
+  kind: 'rectangle';
+  length: number;
+  width: number;
+}
+
+type Shape = Circle | Square;
+
+function getTrueShape(shape: Shape) {
+  if (shape.kind === 'circle') {
+    return Math.PI * shape.radius ** 2;
+  }
+  return shape.side;
+}
