@@ -25,3 +25,18 @@ const getMoreSearchProducts = (products) => {
   const myIndex = 4;
   return products[myIndex];
 };
+function anotherFunction(valOne, valTwo) {
+  return {
+    valOne,
+    valTwo,
+  };
+}
+anotherFunction(3, { connection: '', username: '', password: '' });
+class Sellable {
+  constructor() {
+    this.cart = [];
+  }
+  addToCart(product) {
+    this.cart.push(product);
+  }
+}
